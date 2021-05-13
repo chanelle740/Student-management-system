@@ -1,8 +1,6 @@
 package com.example.javaWapp.Controllers;
-
 import com.example.javaWapp.DB.StudentsDao;
 import com.example.javaWapp.models.Student;
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -53,6 +51,8 @@ public class Students extends HttpServlet {
                     break;
                 case "/list" :
                     listStudent(request, response);
+                case "/listOneStudent" :
+                    listOneStudent(request, response);
                 default:
                     listStudent(request, response);
                     break;
@@ -67,6 +67,14 @@ public class Students extends HttpServlet {
         request.setAttribute("listStudent", listStudent);
         RequestDispatcher dispatcher = request.getRequestDispatcher("students.jsp");
         dispatcher.forward(request, response);
+    }
+    private void listOneStudent(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Student listOneStudent  = studentDao.getStudent(id);
+        request.setAttribute("listOneStudent", listOneStudent);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("viewStudent.jsp");
+        dispatcher.forward(request,response);
+
     }
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

@@ -40,7 +40,9 @@
         <td>
           <a href="/javaWapp_war_exploded/edit?id=<c:out value='${student.id}' />">Edit</a>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="/javaWapp_war_exploded/delete?id=<c:out value='${student.id}' />">Delete</a>
+          <a href="/javaWapp_war_exploded/delete?id=<c:out value='${student.id}' />">delete</a>
+
+          <a href="/javaWapp_war_exploded/listOneStudent?id=<c:out value='${student.id}' />">View</a>
         </td>
       </tr>
     </c:forEach>

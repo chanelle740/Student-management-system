@@ -67,6 +67,8 @@ public class StudentsDao {
         disconnect();
         return listStudent;
     }
+
+
     public boolean deleteStudent(Student student) throws SQLException {
         String sql = "DELETE FROM student where id = ?";
         connect();
@@ -109,4 +111,6 @@ public class StudentsDao {
         statement.close();
         return student;
     }
+
+
 }
