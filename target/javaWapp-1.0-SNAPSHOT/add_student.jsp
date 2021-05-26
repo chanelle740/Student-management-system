@@ -12,6 +12,7 @@
 <html>
 <head>
     <title>Students Managment</title>
+    <style><%@include file="/mystyle.css"%></style>
 </head>
 <body>
 <center>
@@ -29,7 +30,7 @@
         <c:if test="${student == null}">
         <form action="insert" method="post">
             </c:if>
-            <table border="1" cellpadding="5">
+            <table border="1" cellpadding="5" class="styled-table">
                 <caption>
                     <h2>
                         <c:if test="${student != null}">
@@ -46,7 +47,7 @@
                 <tr>
                     <th>First Name: </th>
                     <td>
-                        <input type="text" name="firstName" size="45"
+                        <input type="text" name="firstName" size="20"
                                value="<c:out value='${student.firstName}' />"
                         />
                     </td>
@@ -54,7 +55,7 @@
                 <tr>
                     <th>Last Name: </th>
                     <td>
-                        <input type="text" name="lastName" size="45"
+                        <input type="text" name="lastName" size="20"
                                value="<c:out value='${student.lastName}' />"
                         />
                     </td>
@@ -67,9 +68,9 @@
                         />
                     </td>
                 </tr>
-                <tr>
+                <tr class="button">
                     <td colspan="2" align="center">
-                        <input type="submit" value="Save" />
+                        <input type="submit" value="Save"  class="button"/>
                     </td>
                 </tr>
             </table>
